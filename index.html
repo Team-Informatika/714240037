@@ -3,121 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>VirnaAlmirah - Me</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>E-card</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: "Inter", sans-serif;
-        }
-      
-        .background-animate {
-            background-size: 400%;
-            -webkit-animation: AnimationName 1s ease infinite;
-            -moz-animation: AnimationName 1s ease infinite;
-            animation: AnimationName 15s ease infinite;
-        }
-      
-        @keyframes AnimationName {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-      
-        .border-b {
-            border-bottom-width: 2px;
-            border-bottom-style: solid;
-        }
-
-        .skill-tag {
-            background-color: #2d3748;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 9999px;
-            margin: 2px;
-        }
-
-        .skillset-container {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #a1b6cc;
+            color: #ecf0f1;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
-            max-width: 400px;
-            margin: 0 auto;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .rate-section {
-            padding: 8px 16px;
-            border-radius: 8px;
+        .profile-card {
+            background-color: #ecf0f1;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #044284;
+        }
+
+        .profile-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #043260;
+            margin: 10px 0;
+        }
+
+        .profile-role {
+        font-size: 16px;
+        color: #043260;
+        margin-bottom: 20px;
+        }    
+
+       .profile-role .role-title {
+        font-weight: bold;
+        color: #2c3e50;
+        }
+
+       .profile-role br {
+        margin-bottom: 5px;
+        }
+
+        .skills, .rates {
+            margin: 20px 0;
+        }
+
+        .skills span, .rates span {
+            display: inline-block;
+            background-color: #a1b6cc;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .skills span:hover, .rates span:hover {
+            background-color: #34495e;
+        }
+
+        .rates {
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: center;
+        color: #34495e;
+    }
+
+    .rates strong {
+        font-size: 18px;
+        color: #2c3e50;
+    }
+
+    .rate-value {
+        font-size: 20px;
+        font-weight: bold;
+        color: #6c524f;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .rate-value:hover {
+        color: #6c524f;
+        transform: scale(1.1);
+    }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-top: 20px;
         }
 
-        .rate-section h3 {
-            font-size: 1.1rem;
-            color: #e2e8f0;
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #2c3e50;
+            color: #fff;
+            font-size: 22px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .rate-section p {
-            font-size: 1.2rem;
-            color: #cbd5e0;
+        .social-media a:hover {
+            background-color: #34776a;
+            transform: scale(1.1);
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #34495e;
         }
     </style>
 </head>
 <body>
-    <div class="w-full h-screen bg-gradient-to-r from-cyan-950 via-teal-750 to-slate-950 background-animate flex items-center justify-center"> 
-        <div id="profile-card" class="text-center text-white">
-            <img class="w-20 h-auto pb-6 rounded-full mx-auto" src="pp.jpg">
-            <h1 class="font-bold text-2xl">VirnaAlmirah</h1>
-            <h1 class="text-stone-300 text-sm">@VirnaALmirah</h1>
-            <div class="text-stone-300 mt-4 px-6 w-full md:w-1/2 lg:w-1/3 mx-auto text-center">
-                <p class="text-sm">I enjoy crafting beautiful and functional web experiences with my skills in HTML, CSS, and JavaScript</p>
-            </div>
-            <div class="mt-6">
-                <h2 class="text-xl font-semibold text-stone-300">My Skillset</h2>
-                <div class="skillset-container mt-4">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">CSS</span>
-                </div>
-            </div>
-            <div class="rate-section">
-                <h3>Hourly Rate</h3>
-                <p>$4 USD per hour</p>
-            </div>
-            <div class="py-2 mt-4">
-                <a href="https://www.instagram.com/virnaalll?igsh=bnRua2llb2UzZzZ0">
-                    <button class="rounded-full bg-slate-700 text-white py-2 px-4 m-2">
-                        <i class="bi bi-instagram"></i>                
-                    </button>    
-                </a>
-                <!-- <a href="https://twitter.com/iamherobuxx">
-                    <button class="rounded-full bg-slate-700 text-white py-2 px-4 m-2">
-                        <i class="bi bi-twitter"></i>                
-                    </button>
-                </a> -->
-                <a href="https://github.com/VirnaAlmirah">
-                    <button class="rounded-full bg-slate-700 text-white py-2 px-4 m-2">
-                        <i class="bi bi-github"></i>                
-                    </button>  
-                </a>
-                <!-- <a href="https://linkedin.com/in/herobuxx">
-                    <button class="rounded-full bg-slate-700 text-white py-2 px-4 m-2">
-                        <i class="bi bi-linkedin"></i>                
-                    </button>   
-                </a> -->
-            </div>
-            <!-- <div class="text-sm">
-                <a href="https://github.com/herobuxx/resume/blob/main/resume.pdf">Resume</a>
-                <span class="px-2">•</span>
-                <a href="mailto:herobuxx@hmil.com">Mail</a>
-            </div> -->
+    <div class="profile-card">
+        <img src="pp.jpg" alt="Profile Image" class="profile-image">
+        <div class="profile-name">VIRNA ALMIRAH</div>
+        <div class="profile-role">
+            <span class="role-title">Mahasiswa</span><br>
+            Universitas Logistik dan Bisnis Internasional<br><br>
+            <span class="role-title">Prodi</span><br>
+            Teknik Informatika
         </div>
-    </div>  
+        <div class="skills">
+            <strong>SKILLS</strong><br>
+            <span>Membuat Kue dan Makanan</span>
+            <span>Membuat Website Sederhana</span>
+            <span>Menjual Aplikasi Premium</span>
+            <span>Jasa Foto Polaroid</span>
+        </div>
+
+        <div class="rates">
+            <strong>TARIF JASA</strong><br>
+            <span class="rate-value">Rp50,000/hari</span>
+        </div>
+
+        <div class="description">
+            Saya mahasiswa yang suka bereksperimen dengan teknologi, mulai dari bikin website sederhana, menjual aplikasi premium, sampai bisa membuat kue yang lezat dan makanan yang enak. Saya juga siap membantu dengan jasa foto Polaroid buat momen spesial kamu!
+
+
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.instagram.com/virnaalll?igsh=bnRua2llb2UzZzZ0" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/VirnaAlmirah" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://wa.me/6282116301579" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
