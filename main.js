@@ -1,6 +1,6 @@
 import {renderHTML,onClick,setInner} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js";
 
-renderHTML('card', 'content/home.html')
+renderHTML('card', 'content/index.html')
 
 onClick("instagram",myInstagram);
    function myInstagram() {
