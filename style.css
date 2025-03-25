@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -13,15 +12,16 @@ body {
     color: #fff;
 }
 
+/* HEADER NAVIGATION */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
-    background: transparent;
+    padding: 15px 10%;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
@@ -32,21 +32,19 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
+}
+
+.navbar {
+    display: flex;
 }
 
 .navbar a {
-    display: inline-block;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
-    opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i));
 }
 
 .navbar a:hover,
@@ -54,88 +52,70 @@ body {
     color: #0ef;
 } 
 
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+}
+
+/* HOME SECTION */
 .home {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 10% 0;
-}
-
-.home-content {
-    max-width: 600px;
-}
-
-.home-content h3 {
-    font-size: 32px;
-    font-weight: 700;
-    opacity: 0;
-    animation: slideBottom 1s ease forwards;
-    animation-delay: .7s;
-}
-
-.home-content h3:nth-of-type(2) {
-    margin-bottom: 30px;
-    animation: slideTop 1s ease forwards;
-    animation-delay: .7s;
-}
-
-.home-content h3 span {
-    color: #0ef;
+    padding: 80px 10%;
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 700;
-    margin: -3px 0;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: 1s;
+    margin-bottom: 10px;
 }
 
 .home-content p {
-    font-size: 16px;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
+    font-size: 18px;
+    max-width: 600px;
 }
 
 .home-img img {
-    max-width: 100px;
+    max-width: 250px;
     height: auto;
-    margin-right: 20px;
-    opacity: 0;
-    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-    animation-delay: 2s, 3s;
+    margin-top: 20px;
 }
 
-.social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid #0ef;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #0ef;
-    text-decoration: none;
-    margin: 30px 15px 30px 0;
-    transition: .5s ease;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-}
-
-.social-media a {
-    background: #0ef;
-    color: #1f242d;
-    box-shadow: 0 0 20px #0ef;
-}
-
+/* BUTTON */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -147,156 +127,31 @@ body {
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
+    margin-top: 20px;
 }
 
-
-/*KEYFRAMES ANIMATION */
-@keyframes slideRight {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideLeft {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideTop {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideBottom {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes floatImage {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-24px);
-    }
-    
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 1024px) {
-    .home-content h1 {
-        font-size: 42px;
-    }
-    .home-content p {
-        font-size: 15px;
-    }
-    .home-img img {
-        max-width: 80%;
-    }
-}
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .header {
-        padding: 15px 5%;
-    }
-    .logo {
-        font-size: 20px;
-    }
-    .navbar a {
-        font-size: 14px;
-        margin-left: 15px;
-    }
     .home-content h1 {
-        font-size: 36px;
+        font-size: 32px;
     }
     .home-content p {
-        font-size: 14px;
+        font-size: 16px;
     }
     .home-img img {
-        max-width: 70%;
+        max-width: 180px;
     }
 }
 
 @media (max-width: 480px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-    }
-    .navbar a {
-        margin: 5px 0;
-    }
     .home-content h1 {
         font-size: 28px;
     }
     .home-content p {
-        font-size: 12px;
-    }
-    .home-img img {
-        max-width: 60%;
-    }
-}
-
-@media (max-width: 360px) {
-    .home-content h1 {
-        font-size: 24px;
-    }
-    .home-content p {
-        font-size: 10px;
+        font-size: 14px;
     }
     .btn {
-        padding: 8px 20px;
-        font-size: 12px;
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
